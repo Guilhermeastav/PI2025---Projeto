@@ -1,6 +1,6 @@
 ﻿namespace PI2025___Projeto
 {
-    partial class Form1
+    partial class FormAlugueis
     {
         /// <summary>
         /// Required designer variable.
@@ -28,102 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHistorico = new System.Windows.Forms.Button();
-            this.btnAluguel = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnDeslogar = new System.Windows.Forms.Button();
+            this.dgvAlugueis = new System.Windows.Forms.DataGridView();
+            this.btnSair = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlugueis)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnHistorico
+            // dgvAlugueis
             // 
-            this.btnHistorico.BackColor = System.Drawing.Color.Black;
-            this.btnHistorico.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnHistorico.ForeColor = System.Drawing.Color.LightBlue;
-            this.btnHistorico.Location = new System.Drawing.Point(545, 260);
-            this.btnHistorico.Name = "btnHistorico";
-            this.btnHistorico.Size = new System.Drawing.Size(165, 42);
-            this.btnHistorico.TabIndex = 0;
-            this.btnHistorico.Text = "HISTÓRICO";
-            this.btnHistorico.UseVisualStyleBackColor = false;
-            this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
+            this.dgvAlugueis.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvAlugueis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAlugueis.ColumnHeadersHeight = 34;
+            this.dgvAlugueis.GridColor = System.Drawing.Color.Silver;
+            this.dgvAlugueis.Location = new System.Drawing.Point(12, 16);
+            this.dgvAlugueis.Name = "dgvAlugueis";
+            this.dgvAlugueis.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvAlugueis.RowHeadersWidth = 62;
+            this.dgvAlugueis.RowTemplate.Height = 28;
+            this.dgvAlugueis.Size = new System.Drawing.Size(1297, 598);
+            this.dgvAlugueis.TabIndex = 0;
+            this.dgvAlugueis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlugueis_CellContentClick);
             // 
-            // btnAluguel
+            // btnSair
             // 
-            this.btnAluguel.BackColor = System.Drawing.Color.Black;
-            this.btnAluguel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAluguel.ForeColor = System.Drawing.Color.LightBlue;
-            this.btnAluguel.Location = new System.Drawing.Point(97, 258);
-            this.btnAluguel.Name = "btnAluguel";
-            this.btnAluguel.Size = new System.Drawing.Size(165, 44);
-            this.btnAluguel.TabIndex = 1;
-            this.btnAluguel.Text = "ALUGUEL";
-            this.btnAluguel.UseVisualStyleBackColor = false;
+            this.btnSair.BackColor = System.Drawing.Color.Lavender;
+            this.btnSair.ForeColor = System.Drawing.Color.Navy;
+            this.btnSair.Location = new System.Drawing.Point(12, 622);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(152, 35);
+            this.btnSair.TabIndex = 1;
+            this.btnSair.Text = "VOLTAR";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnLogin
+            // FormAlugueis
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Black;
-            this.btnLogin.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.LightBlue;
-            this.btnLogin.Location = new System.Drawing.Point(318, 277);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(165, 25);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "LOGIN";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Black;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.LightBlue;
-            this.textBox1.Location = new System.Drawing.Point(239, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(327, 33);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "TESTE ALUGUEL CARROS V1";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnDeslogar
-            // 
-            this.btnDeslogar.BackColor = System.Drawing.Color.LightGray;
-            this.btnDeslogar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeslogar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDeslogar.Location = new System.Drawing.Point(545, 415);
-            this.btnDeslogar.Name = "btnDeslogar";
-            this.btnDeslogar.Size = new System.Drawing.Size(101, 23);
-            this.btnDeslogar.TabIndex = 4;
-            this.btnDeslogar.Text = "DESLOGAR";
-            this.btnDeslogar.UseVisualStyleBackColor = false;
-            this.btnDeslogar.Click += new System.EventHandler(this.btnDeslogar_Click);
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::PI2025___Projeto.Properties.Resources.unnamed;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnDeslogar);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnAluguel);
-            this.Controls.Add(this.btnHistorico);
-            this.Name = "Form1";
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(1321, 688);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.dgvAlugueis);
+            this.Name = "FormAlugueis";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlugueis)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnHistorico;
-        private System.Windows.Forms.Button btnAluguel;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnDeslogar;
+        private System.Windows.Forms.DataGridView dgvAlugueis;
+        private System.Windows.Forms.Button btnSair;
     }
 }
-
