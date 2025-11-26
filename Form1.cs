@@ -14,10 +14,10 @@ namespace PI2025___Projeto
         {
             InitializeComponent();
             EstilizarDGV();
-            CarregarAlugueis();
+            carregarAlugueis();
         }
 
-        private void CarregarAlugueis()
+        private void carregarAlugueis()
         {
             try
             {
@@ -136,6 +136,11 @@ namespace PI2025___Projeto
             dgvAlugueis.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             dgvAlugueis.RowTemplate.Height = 38;
+        }
+
+        private void FormAlugueis_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

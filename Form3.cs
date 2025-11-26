@@ -11,18 +11,18 @@ using MySql.Data.MySqlClient;
 
 namespace PI2025___Projeto
 {
-    public partial class Form1 : Form
+    public partial class FrontEnd : Form
     {
         //CONEXAO COM O BANCO DE DADOS
 
         private MySqlConnection conexao;
         private string stringConexao = "server=127.0.0.1;port=3306;database=aluguel_carros;uid=root;pwd=@uo&AY2k;SslMode=Disabled;";
-        public Form1()
+        public FrontEnd()
         {
             InitializeComponent();
         }
 
-        private void VerificarConexao()
+        private void verificarConexao()
         {
             try
             {
@@ -41,11 +41,23 @@ namespace PI2025___Projeto
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            VerificarConexao();
+            verificarConexao();
         }
         private void btnHistorico_Click(object sender, EventArgs e)
         {
+            DataTable tabela = buscarAlugueis();
 
+            if (tabela.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum histórico encontrado.");
+                return;
+            }
+
+            dgvHistorico.DataSource = tabela;
+
+            // Exibir o popup
+            panelHistorico.Visible = true;
+            panelHistorico.BringToFront();
         }
 
         private void btnDeslogar_Click(object sender, EventArgs e)
@@ -59,10 +71,10 @@ namespace PI2025___Projeto
         private void label1_Click(object sender, EventArgs e)
         {
 
-     
+
         }
 
-        private void CarregarAlugueis()
+        private void carregarAlugueis()
         {
             try
             {
@@ -81,7 +93,7 @@ namespace PI2025___Projeto
                 MessageBox.Show("Erro ao carregar dados: " + ex.Message);
             }
         }
-        private DataTable BuscarAlugueis()
+        private DataTable buscarAlugueis()
         {
             DataTable tabela = new DataTable();
             string query = @"
@@ -102,7 +114,8 @@ namespace PI2025___Projeto
                 a.km_final
             FROM alugueis a
             JOIN clientes c ON a.id_cliente = c.id
-            JOIN carros ca ON a.id_carro = ca.id_carro;";
+            JOIN carros ca ON a.id_carro = ca.id_carro
+            ORDER BY a.id_aluguel DESC;";
 
             try
             {
@@ -127,7 +140,7 @@ namespace PI2025___Projeto
         private void btnAluguel_Click(object sender, EventArgs e)
         {
             FormAlugueis tela = new FormAlugueis();
-            tela.ShowDialog(); 
+            tela.ShowDialog();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -140,6 +153,46 @@ namespace PI2025___Projeto
             Color corSemitransparente = Color.FromArgb(128, 30, 30, 30);
 
             pnlBackground.BackColor = corSemitransparente;
+        }
+
+        private void lbAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            FormAdmin tela = new FormAdmin();
+            tela.ShowDialog();
+        }
+
+        private void btnFecharHistorico_Click(object sender, EventArgs e)
+        {
+            panelHistorico.Visible = false;
+        }
+
+
+        bool arrastando = false;
+        Point inicioArrasto;
+
+        private void panelHistorico_MouseDown(object sender, MouseEventArgs e)
+        {
+            arrastando = true;
+            inicioArrasto = e.Location;
+        }
+
+        private void panelHistorico_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (arrastando)
+            {
+                panelHistorico.Left += e.X - inicioArrasto.X;
+                panelHistorico.Top += e.Y - inicioArrasto.Y;
+            }
+        }
+
+        private void panelHistorico_MouseUp(object sender, MouseEventArgs e)
+        {
+            arrastando = false;
         }
     }
 }

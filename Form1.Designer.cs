@@ -39,12 +39,13 @@
             this.dgvAlugueis.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAlugueis.ColumnHeadersHeight = 34;
             this.dgvAlugueis.GridColor = System.Drawing.Color.Silver;
-            this.dgvAlugueis.Location = new System.Drawing.Point(12, 16);
+            this.dgvAlugueis.Location = new System.Drawing.Point(8, 10);
+            this.dgvAlugueis.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAlugueis.Name = "dgvAlugueis";
             this.dgvAlugueis.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAlugueis.RowHeadersWidth = 62;
             this.dgvAlugueis.RowTemplate.Height = 28;
-            this.dgvAlugueis.Size = new System.Drawing.Size(1297, 598);
+            this.dgvAlugueis.Size = new System.Drawing.Size(865, 389);
             this.dgvAlugueis.TabIndex = 0;
             this.dgvAlugueis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlugueis_CellContentClick);
             // 
@@ -52,10 +53,9 @@
             // 
             this.btnSair.BackColor = System.Drawing.Color.Lavender;
             this.btnSair.ForeColor = System.Drawing.Color.Navy;
-            this.btnSair.Location = new System.Drawing.Point(12, 622);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSair.Location = new System.Drawing.Point(8, 404);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(152, 35);
+            this.btnSair.Size = new System.Drawing.Size(101, 23);
             this.btnSair.TabIndex = 1;
             this.btnSair.Text = "VOLTAR";
             this.btnSair.UseVisualStyleBackColor = false;
@@ -63,14 +63,16 @@
             // 
             // FormAlugueis
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1321, 688);
+            this.ClientSize = new System.Drawing.Size(881, 447);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.dgvAlugueis);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAlugueis";
-            this.Text = "Form1";
+            this.Text = "DataGridView";
+            this.Load += new System.EventHandler(this.FormAlugueis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlugueis)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,6 +1,6 @@
 ﻿namespace PI2025___Projeto
 {
-    partial class Form1
+    partial class FrontEnd
     {
         /// <summary>
         /// Required designer variable.
@@ -31,11 +31,17 @@
             this.btnHistorico = new System.Windows.Forms.Button();
             this.btnAluguel = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.txbTitulo = new System.Windows.Forms.TextBox();
             this.btnDeslogar = new System.Windows.Forms.Button();
             this.lblConexaoBDA = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
+            this.panelHistorico = new System.Windows.Forms.Panel();
+            this.btnFecharHistorico = new System.Windows.Forms.Button();
+            this.dgvHistorico = new System.Windows.Forms.DataGridView();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlBackground.SuspendLayout();
+            this.panelHistorico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorico)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHistorico
@@ -43,7 +49,7 @@
             this.btnHistorico.BackColor = System.Drawing.Color.LightGray;
             this.btnHistorico.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnHistorico.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btnHistorico.Location = new System.Drawing.Point(498, 396);
+            this.btnHistorico.Location = new System.Drawing.Point(537, 317);
             this.btnHistorico.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHistorico.Name = "btnHistorico";
             this.btnHistorico.Size = new System.Drawing.Size(248, 38);
@@ -57,7 +63,7 @@
             this.btnAluguel.BackColor = System.Drawing.Color.LightGray;
             this.btnAluguel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAluguel.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAluguel.Location = new System.Drawing.Point(498, 332);
+            this.btnAluguel.Location = new System.Drawing.Point(537, 269);
             this.btnAluguel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAluguel.Name = "btnAluguel";
             this.btnAluguel.Size = new System.Drawing.Size(248, 38);
@@ -71,7 +77,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.LightGray;
             this.btnLogin.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLogin.Location = new System.Drawing.Point(498, 261);
+            this.btnLogin.Location = new System.Drawing.Point(537, 174);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(248, 38);
@@ -80,26 +86,12 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // txbTitulo
-            // 
-            this.txbTitulo.BackColor = System.Drawing.Color.LightGray;
-            this.txbTitulo.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTitulo.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txbTitulo.Location = new System.Drawing.Point(382, 35);
-            this.txbTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txbTitulo.Name = "txbTitulo";
-            this.txbTitulo.Size = new System.Drawing.Size(488, 46);
-            this.txbTitulo.TabIndex = 3;
-            this.txbTitulo.Text = "PUC Motors";
-            this.txbTitulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txbTitulo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // btnDeslogar
             // 
             this.btnDeslogar.BackColor = System.Drawing.Color.LightGray;
             this.btnDeslogar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeslogar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDeslogar.Location = new System.Drawing.Point(1128, 532);
+            this.btnDeslogar.Location = new System.Drawing.Point(603, 365);
             this.btnDeslogar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeslogar.Name = "btnDeslogar";
             this.btnDeslogar.Size = new System.Drawing.Size(112, 43);
@@ -112,7 +104,7 @@
             // 
             this.lblConexaoBDA.AutoSize = true;
             this.lblConexaoBDA.ForeColor = System.Drawing.Color.Red;
-            this.lblConexaoBDA.Location = new System.Drawing.Point(12, 555);
+            this.lblConexaoBDA.Location = new System.Drawing.Point(16, 580);
             this.lblConexaoBDA.Name = "lblConexaoBDA";
             this.lblConexaoBDA.Size = new System.Drawing.Size(120, 20);
             this.lblConexaoBDA.TabIndex = 5;
@@ -122,34 +114,99 @@
             // pnlBackground
             // 
             this.pnlBackground.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBackground.Controls.Add(this.textBox1);
+            this.pnlBackground.Controls.Add(this.btnAdmin);
             this.pnlBackground.Controls.Add(this.lblConexaoBDA);
             this.pnlBackground.Controls.Add(this.btnAluguel);
             this.pnlBackground.Controls.Add(this.btnDeslogar);
-            this.pnlBackground.Controls.Add(this.txbTitulo);
             this.pnlBackground.Controls.Add(this.btnHistorico);
             this.pnlBackground.Controls.Add(this.btnLogin);
+            this.pnlBackground.Controls.Add(this.panelHistorico);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 0);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(1253, 600);
+            this.pnlBackground.Size = new System.Drawing.Size(1268, 614);
             this.pnlBackground.TabIndex = 6;
             // 
-            // Form1
+            // panelHistorico
+            // 
+            this.panelHistorico.BackColor = System.Drawing.Color.White;
+            this.panelHistorico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHistorico.Controls.Add(this.btnFecharHistorico);
+            this.panelHistorico.Controls.Add(this.dgvHistorico);
+            this.panelHistorico.Location = new System.Drawing.Point(66, 133);
+            this.panelHistorico.Name = "panelHistorico";
+            this.panelHistorico.Size = new System.Drawing.Size(1165, 347);
+            this.panelHistorico.TabIndex = 7;
+            this.panelHistorico.Visible = false;
+            // 
+            // btnFecharHistorico
+            // 
+            this.btnFecharHistorico.Location = new System.Drawing.Point(22, 282);
+            this.btnFecharHistorico.Name = "btnFecharHistorico";
+            this.btnFecharHistorico.Size = new System.Drawing.Size(110, 32);
+            this.btnFecharHistorico.TabIndex = 1;
+            this.btnFecharHistorico.Text = "VOLTAR";
+            this.btnFecharHistorico.UseVisualStyleBackColor = true;
+            this.btnFecharHistorico.Click += new System.EventHandler(this.btnFecharHistorico_Click);
+            // 
+            // dgvHistorico
+            // 
+            this.dgvHistorico.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHistorico.ColumnHeadersHeight = 34;
+            this.dgvHistorico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHistorico.Location = new System.Drawing.Point(0, 0);
+            this.dgvHistorico.Name = "dgvHistorico";
+            this.dgvHistorico.RowHeadersWidth = 62;
+            this.dgvHistorico.RowTemplate.Height = 28;
+            this.dgvHistorico.Size = new System.Drawing.Size(1163, 345);
+            this.dgvHistorico.TabIndex = 0;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.LightGray;
+            this.btnAdmin.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAdmin.Location = new System.Drawing.Point(537, 222);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(248, 38);
+            this.btnAdmin.TabIndex = 6;
+            this.btnAdmin.Text = "ADMIN";
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightGray;
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox1.Location = new System.Drawing.Point(1026, 541);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(238, 46);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "PUC Motors";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // FrontEnd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::PI2025___Projeto.Properties.Resources.PUCMotors;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1253, 600);
+            this.ClientSize = new System.Drawing.Size(1268, 614);
             this.Controls.Add(this.pnlBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FrontEnd";
+            this.Text = "Main";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.pnlBackground.ResumeLayout(false);
             this.pnlBackground.PerformLayout();
+            this.panelHistorico.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorico)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,10 +216,14 @@
         private System.Windows.Forms.Button btnHistorico;
         private System.Windows.Forms.Button btnAluguel;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox txbTitulo;
         private System.Windows.Forms.Button btnDeslogar;
         private System.Windows.Forms.Label lblConexaoBDA;
         private System.Windows.Forms.Panel pnlBackground;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Panel panelHistorico;
+        private System.Windows.Forms.Button btnFecharHistorico;
+        private System.Windows.Forms.DataGridView dgvHistorico;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
