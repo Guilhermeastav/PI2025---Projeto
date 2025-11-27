@@ -33,6 +33,16 @@
             this.btnAlterar_0 = new System.Windows.Forms.Button();
             this.btnRemover_0 = new System.Windows.Forms.Button();
             this.gpboxClientes = new System.Windows.Forms.GroupBox();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblCEP = new System.Windows.Forms.Label();
+            this.lblEndereco = new System.Windows.Forms.Label();
+            this.lblValidadeCNH = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.lblCNH = new System.Windows.Forms.Label();
+            this.lblIdade = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.comboID_Clientes = new System.Windows.Forms.ComboBox();
             this.txtClientes_09 = new System.Windows.Forms.TextBox();
             this.txtClientes_08 = new System.Windows.Forms.TextBox();
@@ -43,6 +53,17 @@
             this.txtClientes_03 = new System.Windows.Forms.TextBox();
             this.txtClientes_02 = new System.Windows.Forms.TextBox();
             this.gpBoxCarros = new System.Windows.Forms.GroupBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblDiaria = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblCombustivel = new System.Windows.Forms.Label();
+            this.lblKilometragem = new System.Windows.Forms.Label();
+            this.lblCor = new System.Windows.Forms.Label();
+            this.lblPlaca = new System.Windows.Forms.Label();
+            this.lblAno = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblModelo = new System.Windows.Forms.Label();
+            this.lblCarros = new System.Windows.Forms.Label();
             this.comboCarro_Status = new System.Windows.Forms.ComboBox();
             this.txtCarro_09 = new System.Windows.Forms.TextBox();
             this.txtCarro_08 = new System.Windows.Forms.TextBox();
@@ -58,46 +79,25 @@
             this.btnAlterar_1 = new System.Windows.Forms.Button();
             this.btnRemover_1 = new System.Windows.Forms.Button();
             this.gpBoxAlugueis = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblKMFinal = new System.Windows.Forms.Label();
+            this.lblKMInicial = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblInicio = new System.Windows.Forms.Label();
+            this.txtAluguel_04 = new System.Windows.Forms.TextBox();
             this.txtAluguel_03 = new System.Windows.Forms.TextBox();
+            this.txtAluguel_05 = new System.Windows.Forms.TextBox();
             this.txtAluguel_02 = new System.Windows.Forms.TextBox();
+            this.txtAluguel_01 = new System.Windows.Forms.TextBox();
             this.btnAdicionar_2 = new System.Windows.Forms.Button();
             this.comboBox_Alugueis = new System.Windows.Forms.ComboBox();
-            this.txtAluguel_01 = new System.Windows.Forms.TextBox();
             this.btnAlterar_2 = new System.Windows.Forms.Button();
             this.btnRemover_2 = new System.Windows.Forms.Button();
-            this.txtAluguel_04 = new System.Windows.Forms.TextBox();
-            this.txtAluguel_05 = new System.Windows.Forms.TextBox();
-            this.txtAluguel_06 = new System.Windows.Forms.TextBox();
-            this.txtAluguel_07 = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblIdade = new System.Windows.Forms.Label();
-            this.lblCNH = new System.Windows.Forms.Label();
-            this.lblCPF = new System.Windows.Forms.Label();
-            this.lblValidadeCNH = new System.Windows.Forms.Label();
-            this.lblEndereco = new System.Windows.Forms.Label();
-            this.lblCEP = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.lblCarros = new System.Windows.Forms.Label();
-            this.lblModelo = new System.Windows.Forms.Label();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.lblAno = new System.Windows.Forms.Label();
-            this.lblPlaca = new System.Windows.Forms.Label();
-            this.lblCor = new System.Windows.Forms.Label();
-            this.lblKilometragem = new System.Windows.Forms.Label();
-            this.lblCombustivel = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.lblDiaria = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.lblInicio = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblKMInicial = new System.Windows.Forms.Label();
-            this.lblKMFinal = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.comboAlugueis_01 = new System.Windows.Forms.ComboBox();
+            this.comboAlugueis_02 = new System.Windows.Forms.ComboBox();
             this.gpboxClientes.SuspendLayout();
             this.gpBoxCarros.SuspendLayout();
             this.gpBoxAlugueis.SuspendLayout();
@@ -177,6 +177,96 @@
             this.gpboxClientes.TabIndex = 11;
             this.gpboxClientes.TabStop = false;
             this.gpboxClientes.Text = "Clientes";
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(380, 36);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(83, 20);
+            this.lblCliente.TabIndex = 29;
+            this.lblCliente.Text = "ID Cliente:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(756, 146);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(57, 20);
+            this.lblEmail.TabIndex = 28;
+            this.lblEmail.Text = "E-mail:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(506, 146);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Telefone:";
+            // 
+            // lblCEP
+            // 
+            this.lblCEP.AutoSize = true;
+            this.lblCEP.Location = new System.Drawing.Point(278, 149);
+            this.lblCEP.Name = "lblCEP";
+            this.lblCEP.Size = new System.Drawing.Size(45, 20);
+            this.lblCEP.TabIndex = 26;
+            this.lblCEP.Text = "CEP:";
+            // 
+            // lblEndereco
+            // 
+            this.lblEndereco.AutoSize = true;
+            this.lblEndereco.Location = new System.Drawing.Point(10, 146);
+            this.lblEndereco.Name = "lblEndereco";
+            this.lblEndereco.Size = new System.Drawing.Size(82, 20);
+            this.lblEndereco.TabIndex = 22;
+            this.lblEndereco.Text = "Endereço:";
+            // 
+            // lblValidadeCNH
+            // 
+            this.lblValidadeCNH.AutoSize = true;
+            this.lblValidadeCNH.Location = new System.Drawing.Point(927, 94);
+            this.lblValidadeCNH.Name = "lblValidadeCNH";
+            this.lblValidadeCNH.Size = new System.Drawing.Size(113, 20);
+            this.lblValidadeCNH.TabIndex = 25;
+            this.lblValidadeCNH.Text = "Validade CNH:";
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Location = new System.Drawing.Point(481, 94);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(44, 20);
+            this.lblCPF.TabIndex = 24;
+            this.lblCPF.Text = "CPF:";
+            // 
+            // lblCNH
+            // 
+            this.lblCNH.AutoSize = true;
+            this.lblCNH.Location = new System.Drawing.Point(706, 94);
+            this.lblCNH.Name = "lblCNH";
+            this.lblCNH.Size = new System.Drawing.Size(47, 20);
+            this.lblCNH.TabIndex = 23;
+            this.lblCNH.Text = "CNH:";
+            // 
+            // lblIdade
+            // 
+            this.lblIdade.AutoSize = true;
+            this.lblIdade.Location = new System.Drawing.Point(248, 94);
+            this.lblIdade.Name = "lblIdade";
+            this.lblIdade.Size = new System.Drawing.Size(54, 20);
+            this.lblIdade.TabIndex = 22;
+            this.lblIdade.Text = "Idade:";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(10, 94);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(55, 20);
+            this.lblNome.TabIndex = 21;
+            this.lblNome.Text = "Nome:";
             // 
             // comboID_Clientes
             // 
@@ -286,6 +376,105 @@
             this.gpBoxCarros.TabIndex = 12;
             this.gpBoxCarros.TabStop = false;
             this.gpBoxCarros.Text = "Carros";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(679, 34);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(60, 20);
+            this.lblStatus.TabIndex = 38;
+            this.lblStatus.Text = "Status:";
+            // 
+            // lblDiaria
+            // 
+            this.lblDiaria.AutoSize = true;
+            this.lblDiaria.Location = new System.Drawing.Point(924, 88);
+            this.lblDiaria.Name = "lblDiaria";
+            this.lblDiaria.Size = new System.Drawing.Size(54, 20);
+            this.lblDiaria.TabIndex = 37;
+            this.lblDiaria.Text = "Diaria:";
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(836, 135);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(82, 20);
+            this.lblCategoria.TabIndex = 36;
+            this.lblCategoria.Text = "Categoria:";
+            // 
+            // lblCombustivel
+            // 
+            this.lblCombustivel.AutoSize = true;
+            this.lblCombustivel.Location = new System.Drawing.Point(506, 135);
+            this.lblCombustivel.Name = "lblCombustivel";
+            this.lblCombustivel.Size = new System.Drawing.Size(155, 20);
+            this.lblCombustivel.TabIndex = 35;
+            this.lblCombustivel.Text = "Tipo de Combustível:";
+            // 
+            // lblKilometragem
+            // 
+            this.lblKilometragem.AutoSize = true;
+            this.lblKilometragem.Location = new System.Drawing.Point(248, 138);
+            this.lblKilometragem.Name = "lblKilometragem";
+            this.lblKilometragem.Size = new System.Drawing.Size(81, 20);
+            this.lblKilometragem.TabIndex = 34;
+            this.lblKilometragem.Text = " Km Atual:";
+            // 
+            // lblCor
+            // 
+            this.lblCor.AutoSize = true;
+            this.lblCor.Location = new System.Drawing.Point(701, 88);
+            this.lblCor.Name = "lblCor";
+            this.lblCor.Size = new System.Drawing.Size(38, 20);
+            this.lblCor.TabIndex = 33;
+            this.lblCor.Text = "Cor:";
+            // 
+            // lblPlaca
+            // 
+            this.lblPlaca.AutoSize = true;
+            this.lblPlaca.Location = new System.Drawing.Point(13, 138);
+            this.lblPlaca.Name = "lblPlaca";
+            this.lblPlaca.Size = new System.Drawing.Size(52, 20);
+            this.lblPlaca.TabIndex = 22;
+            this.lblPlaca.Text = "Placa:";
+            // 
+            // lblAno
+            // 
+            this.lblAno.AutoSize = true;
+            this.lblAno.Location = new System.Drawing.Point(483, 88);
+            this.lblAno.Name = "lblAno";
+            this.lblAno.Size = new System.Drawing.Size(42, 20);
+            this.lblAno.TabIndex = 32;
+            this.lblAno.Text = "Ano:";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(248, 88);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(57, 20);
+            this.lblMarca.TabIndex = 31;
+            this.lblMarca.Text = "Marca:";
+            // 
+            // lblModelo
+            // 
+            this.lblModelo.AutoSize = true;
+            this.lblModelo.Location = new System.Drawing.Point(10, 91);
+            this.lblModelo.Name = "lblModelo";
+            this.lblModelo.Size = new System.Drawing.Size(65, 20);
+            this.lblModelo.TabIndex = 30;
+            this.lblModelo.Text = "Modelo:";
+            // 
+            // lblCarros
+            // 
+            this.lblCarros.AutoSize = true;
+            this.lblCarros.Location = new System.Drawing.Point(380, 36);
+            this.lblCarros.Name = "lblCarros";
+            this.lblCarros.Size = new System.Drawing.Size(81, 20);
+            this.lblCarros.TabIndex = 30;
+            this.lblCarros.Text = "ID Carros:";
             // 
             // comboCarro_Status
             // 
@@ -412,6 +601,8 @@
             // 
             // gpBoxAlugueis
             // 
+            this.gpBoxAlugueis.Controls.Add(this.comboAlugueis_02);
+            this.gpBoxAlugueis.Controls.Add(this.comboAlugueis_01);
             this.gpBoxAlugueis.Controls.Add(this.label5);
             this.gpBoxAlugueis.Controls.Add(this.label4);
             this.gpBoxAlugueis.Controls.Add(this.label3);
@@ -420,15 +611,13 @@
             this.gpBoxAlugueis.Controls.Add(this.label1);
             this.gpBoxAlugueis.Controls.Add(this.label2);
             this.gpBoxAlugueis.Controls.Add(this.lblInicio);
-            this.gpBoxAlugueis.Controls.Add(this.txtAluguel_07);
-            this.gpBoxAlugueis.Controls.Add(this.txtAluguel_06);
-            this.gpBoxAlugueis.Controls.Add(this.txtAluguel_05);
             this.gpBoxAlugueis.Controls.Add(this.txtAluguel_04);
             this.gpBoxAlugueis.Controls.Add(this.txtAluguel_03);
+            this.gpBoxAlugueis.Controls.Add(this.txtAluguel_05);
             this.gpBoxAlugueis.Controls.Add(this.txtAluguel_02);
+            this.gpBoxAlugueis.Controls.Add(this.txtAluguel_01);
             this.gpBoxAlugueis.Controls.Add(this.btnAdicionar_2);
             this.gpBoxAlugueis.Controls.Add(this.comboBox_Alugueis);
-            this.gpBoxAlugueis.Controls.Add(this.txtAluguel_01);
             this.gpBoxAlugueis.Controls.Add(this.btnAlterar_2);
             this.gpBoxAlugueis.Controls.Add(this.btnRemover_2);
             this.gpBoxAlugueis.Location = new System.Drawing.Point(18, 442);
@@ -440,21 +629,117 @@
             this.gpBoxAlugueis.TabStop = false;
             this.gpBoxAlugueis.Text = "Alugueis";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 146);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "ID Carro:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "ID Cliente:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(380, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "ID Alugueis:";
+            // 
+            // lblKMFinal
+            // 
+            this.lblKMFinal.AutoSize = true;
+            this.lblKMFinal.Location = new System.Drawing.Point(568, 149);
+            this.lblKMFinal.Name = "lblKMFinal";
+            this.lblKMFinal.Size = new System.Drawing.Size(74, 20);
+            this.lblKMFinal.TabIndex = 34;
+            this.lblKMFinal.Text = "Km Final:";
+            // 
+            // lblKMInicial
+            // 
+            this.lblKMInicial.AutoSize = true;
+            this.lblKMInicial.Location = new System.Drawing.Point(568, 98);
+            this.lblKMInicial.Name = "lblKMInicial";
+            this.lblKMInicial.Size = new System.Drawing.Size(80, 20);
+            this.lblKMInicial.TabIndex = 33;
+            this.lblKMInicial.Text = "Km Inicial:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(836, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 20);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Valor Total do Aluguel:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(281, 146);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Data Final:";
+            // 
+            // lblInicio
+            // 
+            this.lblInicio.AutoSize = true;
+            this.lblInicio.Location = new System.Drawing.Point(278, 98);
+            this.lblInicio.Name = "lblInicio";
+            this.lblInicio.Size = new System.Drawing.Size(89, 20);
+            this.lblInicio.TabIndex = 30;
+            this.lblInicio.Text = "Data Inicio:";
+            // 
+            // txtAluguel_04
+            // 
+            this.txtAluguel_04.Location = new System.Drawing.Point(655, 146);
+            this.txtAluguel_04.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAluguel_04.Name = "txtAluguel_04";
+            this.txtAluguel_04.Size = new System.Drawing.Size(158, 26);
+            this.txtAluguel_04.TabIndex = 18;
+            // 
             // txtAluguel_03
             // 
-            this.txtAluguel_03.Location = new System.Drawing.Point(374, 95);
+            this.txtAluguel_03.Location = new System.Drawing.Point(655, 89);
             this.txtAluguel_03.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAluguel_03.Name = "txtAluguel_03";
             this.txtAluguel_03.Size = new System.Drawing.Size(158, 26);
-            this.txtAluguel_03.TabIndex = 14;
+            this.txtAluguel_03.TabIndex = 17;
+            // 
+            // txtAluguel_05
+            // 
+            this.txtAluguel_05.Location = new System.Drawing.Point(1001, 89);
+            this.txtAluguel_05.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAluguel_05.Name = "txtAluguel_05";
+            this.txtAluguel_05.Size = new System.Drawing.Size(158, 26);
+            this.txtAluguel_05.TabIndex = 16;
             // 
             // txtAluguel_02
             // 
-            this.txtAluguel_02.Location = new System.Drawing.Point(106, 143);
+            this.txtAluguel_02.Location = new System.Drawing.Point(374, 143);
             this.txtAluguel_02.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAluguel_02.Name = "txtAluguel_02";
             this.txtAluguel_02.Size = new System.Drawing.Size(158, 26);
-            this.txtAluguel_02.TabIndex = 12;
+            this.txtAluguel_02.TabIndex = 15;
+            // 
+            // txtAluguel_01
+            // 
+            this.txtAluguel_01.Location = new System.Drawing.Point(374, 95);
+            this.txtAluguel_01.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAluguel_01.Name = "txtAluguel_01";
+            this.txtAluguel_01.Size = new System.Drawing.Size(158, 26);
+            this.txtAluguel_01.TabIndex = 14;
             // 
             // btnAdicionar_2
             // 
@@ -475,14 +760,6 @@
             this.comboBox_Alugueis.Name = "comboBox_Alugueis";
             this.comboBox_Alugueis.Size = new System.Drawing.Size(180, 28);
             this.comboBox_Alugueis.TabIndex = 6;
-            // 
-            // txtAluguel_01
-            // 
-            this.txtAluguel_01.Location = new System.Drawing.Point(106, 92);
-            this.txtAluguel_01.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAluguel_01.Name = "txtAluguel_01";
-            this.txtAluguel_01.Size = new System.Drawing.Size(158, 26);
-            this.txtAluguel_01.TabIndex = 10;
             // 
             // btnAlterar_2
             // 
@@ -506,304 +783,29 @@
             this.btnRemover_2.UseVisualStyleBackColor = true;
             this.btnRemover_2.Click += new System.EventHandler(this.btnRemover_2_Click);
             // 
-            // txtAluguel_04
-            // 
-            this.txtAluguel_04.Location = new System.Drawing.Point(374, 143);
-            this.txtAluguel_04.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAluguel_04.Name = "txtAluguel_04";
-            this.txtAluguel_04.Size = new System.Drawing.Size(158, 26);
-            this.txtAluguel_04.TabIndex = 15;
-            // 
-            // txtAluguel_05
-            // 
-            this.txtAluguel_05.Location = new System.Drawing.Point(1001, 89);
-            this.txtAluguel_05.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAluguel_05.Name = "txtAluguel_05";
-            this.txtAluguel_05.Size = new System.Drawing.Size(158, 26);
-            this.txtAluguel_05.TabIndex = 16;
-            // 
-            // txtAluguel_06
-            // 
-            this.txtAluguel_06.Location = new System.Drawing.Point(655, 89);
-            this.txtAluguel_06.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAluguel_06.Name = "txtAluguel_06";
-            this.txtAluguel_06.Size = new System.Drawing.Size(158, 26);
-            this.txtAluguel_06.TabIndex = 17;
-            // 
-            // txtAluguel_07
-            // 
-            this.txtAluguel_07.Location = new System.Drawing.Point(655, 146);
-            this.txtAluguel_07.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAluguel_07.Name = "txtAluguel_07";
-            this.txtAluguel_07.Size = new System.Drawing.Size(158, 26);
-            this.txtAluguel_07.TabIndex = 18;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(10, 94);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(55, 20);
-            this.lblNome.TabIndex = 21;
-            this.lblNome.Text = "Nome:";
-            // 
-            // lblIdade
-            // 
-            this.lblIdade.AutoSize = true;
-            this.lblIdade.Location = new System.Drawing.Point(248, 94);
-            this.lblIdade.Name = "lblIdade";
-            this.lblIdade.Size = new System.Drawing.Size(54, 20);
-            this.lblIdade.TabIndex = 22;
-            this.lblIdade.Text = "Idade:";
-            // 
-            // lblCNH
-            // 
-            this.lblCNH.AutoSize = true;
-            this.lblCNH.Location = new System.Drawing.Point(706, 94);
-            this.lblCNH.Name = "lblCNH";
-            this.lblCNH.Size = new System.Drawing.Size(47, 20);
-            this.lblCNH.TabIndex = 23;
-            this.lblCNH.Text = "CNH:";
-            // 
-            // lblCPF
-            // 
-            this.lblCPF.AutoSize = true;
-            this.lblCPF.Location = new System.Drawing.Point(481, 94);
-            this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(44, 20);
-            this.lblCPF.TabIndex = 24;
-            this.lblCPF.Text = "CPF:";
-            // 
-            // lblValidadeCNH
-            // 
-            this.lblValidadeCNH.AutoSize = true;
-            this.lblValidadeCNH.Location = new System.Drawing.Point(927, 94);
-            this.lblValidadeCNH.Name = "lblValidadeCNH";
-            this.lblValidadeCNH.Size = new System.Drawing.Size(113, 20);
-            this.lblValidadeCNH.TabIndex = 25;
-            this.lblValidadeCNH.Text = "Validade CNH:";
-            // 
-            // lblEndereco
-            // 
-            this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(10, 146);
-            this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(82, 20);
-            this.lblEndereco.TabIndex = 22;
-            this.lblEndereco.Text = "Endereço:";
-            // 
-            // lblCEP
-            // 
-            this.lblCEP.AutoSize = true;
-            this.lblCEP.Location = new System.Drawing.Point(278, 149);
-            this.lblCEP.Name = "lblCEP";
-            this.lblCEP.Size = new System.Drawing.Size(45, 20);
-            this.lblCEP.TabIndex = 26;
-            this.lblCEP.Text = "CEP:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(506, 146);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 20);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Telefone:";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(756, 146);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(57, 20);
-            this.lblEmail.TabIndex = 28;
-            this.lblEmail.Text = "E-mail:";
-            // 
-            // lblCliente
-            // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(380, 36);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(83, 20);
-            this.lblCliente.TabIndex = 29;
-            this.lblCliente.Text = "ID Cliente:";
-            // 
-            // lblCarros
-            // 
-            this.lblCarros.AutoSize = true;
-            this.lblCarros.Location = new System.Drawing.Point(380, 36);
-            this.lblCarros.Name = "lblCarros";
-            this.lblCarros.Size = new System.Drawing.Size(81, 20);
-            this.lblCarros.TabIndex = 30;
-            this.lblCarros.Text = "ID Carros:";
-            // 
-            // lblModelo
-            // 
-            this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(10, 91);
-            this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(65, 20);
-            this.lblModelo.TabIndex = 30;
-            this.lblModelo.Text = "Modelo:";
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(248, 88);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(57, 20);
-            this.lblMarca.TabIndex = 31;
-            this.lblMarca.Text = "Marca:";
-            // 
-            // lblAno
-            // 
-            this.lblAno.AutoSize = true;
-            this.lblAno.Location = new System.Drawing.Point(483, 88);
-            this.lblAno.Name = "lblAno";
-            this.lblAno.Size = new System.Drawing.Size(42, 20);
-            this.lblAno.TabIndex = 32;
-            this.lblAno.Text = "Ano:";
-            // 
-            // lblPlaca
-            // 
-            this.lblPlaca.AutoSize = true;
-            this.lblPlaca.Location = new System.Drawing.Point(13, 138);
-            this.lblPlaca.Name = "lblPlaca";
-            this.lblPlaca.Size = new System.Drawing.Size(52, 20);
-            this.lblPlaca.TabIndex = 22;
-            this.lblPlaca.Text = "Placa:";
-            // 
-            // lblCor
-            // 
-            this.lblCor.AutoSize = true;
-            this.lblCor.Location = new System.Drawing.Point(701, 88);
-            this.lblCor.Name = "lblCor";
-            this.lblCor.Size = new System.Drawing.Size(38, 20);
-            this.lblCor.TabIndex = 33;
-            this.lblCor.Text = "Cor:";
-            // 
-            // lblKilometragem
-            // 
-            this.lblKilometragem.AutoSize = true;
-            this.lblKilometragem.Location = new System.Drawing.Point(248, 138);
-            this.lblKilometragem.Name = "lblKilometragem";
-            this.lblKilometragem.Size = new System.Drawing.Size(81, 20);
-            this.lblKilometragem.TabIndex = 34;
-            this.lblKilometragem.Text = " Km Atual:";
-            // 
-            // lblCombustivel
-            // 
-            this.lblCombustivel.AutoSize = true;
-            this.lblCombustivel.Location = new System.Drawing.Point(506, 135);
-            this.lblCombustivel.Name = "lblCombustivel";
-            this.lblCombustivel.Size = new System.Drawing.Size(155, 20);
-            this.lblCombustivel.TabIndex = 35;
-            this.lblCombustivel.Text = "Tipo de Combustível:";
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(836, 135);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(82, 20);
-            this.lblCategoria.TabIndex = 36;
-            this.lblCategoria.Text = "Categoria:";
-            // 
-            // lblDiaria
-            // 
-            this.lblDiaria.AutoSize = true;
-            this.lblDiaria.Location = new System.Drawing.Point(924, 88);
-            this.lblDiaria.Name = "lblDiaria";
-            this.lblDiaria.Size = new System.Drawing.Size(54, 20);
-            this.lblDiaria.TabIndex = 37;
-            this.lblDiaria.Text = "Diaria:";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(679, 34);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(60, 20);
-            this.lblStatus.TabIndex = 38;
-            this.lblStatus.Text = "Status:";
-            // 
-            // lblInicio
-            // 
-            this.lblInicio.AutoSize = true;
-            this.lblInicio.Location = new System.Drawing.Point(278, 98);
-            this.lblInicio.Name = "lblInicio";
-            this.lblInicio.Size = new System.Drawing.Size(89, 20);
-            this.lblInicio.TabIndex = 30;
-            this.lblInicio.Text = "Data Inicio:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Data Final:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(836, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 20);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Valor Total do Aluguel:";
-            // 
-            // lblKMInicial
-            // 
-            this.lblKMInicial.AutoSize = true;
-            this.lblKMInicial.Location = new System.Drawing.Point(568, 152);
-            this.lblKMInicial.Name = "lblKMInicial";
-            this.lblKMInicial.Size = new System.Drawing.Size(80, 20);
-            this.lblKMInicial.TabIndex = 33;
-            this.lblKMInicial.Text = "Km Inicial:";
-            // 
-            // lblKMFinal
-            // 
-            this.lblKMFinal.AutoSize = true;
-            this.lblKMFinal.Location = new System.Drawing.Point(568, 92);
-            this.lblKMFinal.Name = "lblKMFinal";
-            this.lblKMFinal.Size = new System.Drawing.Size(74, 20);
-            this.lblKMFinal.TabIndex = 34;
-            this.lblKMFinal.Text = "Km Final:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(380, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 20);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "ID Alugueis:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "ID Cliente:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 146);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "ID Carro:";
+            // comboAlugueis_01
+            // 
+            this.comboAlugueis_01.FormattingEnabled = true;
+            this.comboAlugueis_01.Location = new System.Drawing.Point(91, 93);
+            this.comboAlugueis_01.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboAlugueis_01.Name = "comboAlugueis_01";
+            this.comboAlugueis_01.Size = new System.Drawing.Size(166, 28);
+            this.comboAlugueis_01.TabIndex = 41;
+            // 
+            // comboAlugueis_02
+            // 
+            this.comboAlugueis_02.FormattingEnabled = true;
+            this.comboAlugueis_02.Location = new System.Drawing.Point(91, 143);
+            this.comboAlugueis_02.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboAlugueis_02.Name = "comboAlugueis_02";
+            this.comboAlugueis_02.Size = new System.Drawing.Size(166, 28);
+            this.comboAlugueis_02.TabIndex = 42;
             // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1315, 1062);
+            this.ClientSize = new System.Drawing.Size(1315, 1050);
             this.Controls.Add(this.gpBoxAlugueis);
             this.Controls.Add(this.gpBoxCarros);
             this.Controls.Add(this.gpboxClientes);
@@ -838,11 +840,9 @@
         private System.Windows.Forms.Button btnAlterar_1;
         private System.Windows.Forms.Button btnRemover_1;
         private System.Windows.Forms.GroupBox gpBoxAlugueis;
-        private System.Windows.Forms.TextBox txtAluguel_03;
-        private System.Windows.Forms.TextBox txtAluguel_02;
+        private System.Windows.Forms.TextBox txtAluguel_01;
         private System.Windows.Forms.Button btnAdicionar_2;
         private System.Windows.Forms.ComboBox comboBox_Alugueis;
-        private System.Windows.Forms.TextBox txtAluguel_01;
         private System.Windows.Forms.Button btnAlterar_2;
         private System.Windows.Forms.Button btnRemover_2;
         private System.Windows.Forms.TextBox txtClientes_08;
@@ -859,9 +859,9 @@
         private System.Windows.Forms.TextBox txtCarro_05;
         private System.Windows.Forms.TextBox txtCarro_04;
         private System.Windows.Forms.ComboBox comboCarro_Status;
+        private System.Windows.Forms.TextBox txtAluguel_02;
         private System.Windows.Forms.TextBox txtAluguel_04;
-        private System.Windows.Forms.TextBox txtAluguel_07;
-        private System.Windows.Forms.TextBox txtAluguel_06;
+        private System.Windows.Forms.TextBox txtAluguel_03;
         private System.Windows.Forms.TextBox txtAluguel_05;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label7;
@@ -892,5 +892,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboAlugueis_02;
+        private System.Windows.Forms.ComboBox comboAlugueis_01;
     }
 }

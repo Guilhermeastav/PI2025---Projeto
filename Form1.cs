@@ -48,16 +48,13 @@ namespace PI2025___Projeto
 
                 if (dgvAlugueis.Columns.Count > 0)
                 {
-                    // Criamos uma CÉLULA DE CABEÇALHO nova e limpa
                     var newHeaderCell = new DataGridViewColumnHeaderCell();
 
-                    // Pegamos o estilo exato que queremos
                     Color headerBack = Color.FromArgb(90, 140, 250);
                     Color headerFore = Color.White;
                     Font headerFont = new Font("Segoe UI", 11, FontStyle.Bold);
                     Padding cellPadding = new Padding(5, 8, 5, 8);
 
-                    // Aplicamos o estilo diretamente nela
                     newHeaderCell.Style.BackColor = headerBack;
                     newHeaderCell.Style.ForeColor = headerFore;
                     newHeaderCell.Style.Font = headerFont;

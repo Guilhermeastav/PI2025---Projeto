@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,7 @@ namespace PI2025___Projeto
 
             comboCarro_Status.SelectedIndex = 0;
 
-        
+
             camposTxtCliente = new TextBox[]
             {
                 txtClientes_01, txtClientes_02, txtClientes_03, txtClientes_04,
@@ -44,31 +45,31 @@ namespace PI2025___Projeto
         {
 
         }
-         //===============================//
+        //===============================//
         // SESSAO DO CODIGO - CLIENTES   //
-       //===============================//
-           private void CarregarIDsClientes()
+        //===============================//
+        private void CarregarIDsClientes()
+        {
+            try
             {
-                try
+
+                if (comboID_Clientes == null)
                 {
-                  
-                    if (comboID_Clientes == null)
+                    MessageBox.Show("Erro: comboBoxClientes não foi inicializada.");
+                    return;
+                }
+
+                comboID_Clientes.Items.Clear();
+
+                using (var conexao = new MySqlConnection(stringConexao))
+                using (var comando = new MySqlCommand("SELECT nome FROM clientes ORDER BY id", conexao))
+                {
+                    conexao.Open();
+                    using (var reader = comando.ExecuteReader())
                     {
-                        MessageBox.Show("Erro: comboBoxClientes não foi inicializada.");
-                        return;
-                    }
-
-                    comboID_Clientes.Items.Clear();
-
-                        using (var conexao = new MySqlConnection(stringConexao))
-                        using (var comando = new MySqlCommand("SELECT id FROM clientes ORDER BY id", conexao))
-                         {
-                         conexao.Open();
-                            using (var reader = comando.ExecuteReader())
-                            {
-                            while (reader.Read())
-                            {
-                            comboID_Clientes.Items.Add(reader.GetInt32("id"));
+                        while (reader.Read())
+                        {
+                            comboID_Clientes.Items.Add(reader.GetString("nome"));
                         }
                     }
                 }
@@ -78,11 +79,10 @@ namespace PI2025___Projeto
                 MessageBox.Show($"Erro ao carregar IDs dos clientes:\n{ex.Message}");
             }
         }
-     
 
         private void btnAdicionar_0_Click(object sender, EventArgs e)
         {
-        
+
             TextBox[] campos =
             {
                 txtClientes_01,
@@ -108,7 +108,7 @@ namespace PI2025___Projeto
                 }
             }
 
-        
+
             try
             {
                 using (var conexao = new MySqlConnection(stringConexao))
@@ -135,11 +135,11 @@ namespace PI2025___Projeto
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
 
-      
+
                 foreach (var campo in campos)
                     campo.Clear();
 
-     
+
                 CarregarIDsClientes();
 
             }
@@ -160,7 +160,7 @@ namespace PI2025___Projeto
                 return;
             }
 
-            int id = Convert.ToInt32(comboID_Clientes.SelectedItem);
+            string id = comboID_Clientes.SelectedItem.ToString();
 
             List<string> campos = new List<string>();
             List<MySqlParameter> parametros = new List<MySqlParameter>();
@@ -173,45 +173,52 @@ namespace PI2025___Projeto
 
             if (!string.IsNullOrWhiteSpace(txtClientes_02.Text))
             {
-                campos.Add("email = @email");
-                parametros.Add(new MySqlParameter("@email", txtClientes_02.Text));
+                campos.Add("idade = @idade");
+                parametros.Add(new MySqlParameter("@idade", txtClientes_02.Text));
             }
 
             if (!string.IsNullOrWhiteSpace(txtClientes_03.Text))
             {
-                campos.Add("telefone = @telefone");
-                parametros.Add(new MySqlParameter("@telefone", txtClientes_03.Text));
+                campos.Add("cpf = @cpf");
+                parametros.Add(new MySqlParameter("@cpf", txtClientes_03.Text));
             }
 
             if (!string.IsNullOrWhiteSpace(txtClientes_04.Text))
             {
-                campos.Add("cpf = @cpf");
-                parametros.Add(new MySqlParameter("@cpf", txtClientes_04.Text));
+                campos.Add("cnh = @cnh");
+                parametros.Add(new MySqlParameter("@cnh", txtClientes_04.Text));
             }
 
             if (!string.IsNullOrWhiteSpace(txtClientes_05.Text))
             {
-                campos.Add("rg = @rg");
-                parametros.Add(new MySqlParameter("@rg", txtClientes_05.Text));
+                campos.Add("validade_cnh = @validade_cnh");
+                parametros.Add(new MySqlParameter("@validade_cnh", txtClientes_05.Text));
             }
 
             if (!string.IsNullOrWhiteSpace(txtClientes_06.Text))
             {
-                campos.Add("cep = @cep");
-                parametros.Add(new MySqlParameter("@cep", txtClientes_06.Text));
+                campos.Add("endereco = @endereco");
+                parametros.Add(new MySqlParameter("@endereco", txtClientes_06.Text));
             }
 
             if (!string.IsNullOrWhiteSpace(txtClientes_07.Text))
             {
-                campos.Add("cidade = @cidade");
-                parametros.Add(new MySqlParameter("@cidade", txtClientes_07.Text));
+                campos.Add("cep = @cep");
+                parametros.Add(new MySqlParameter("@cep", txtClientes_07.Text));
             }
 
             if (!string.IsNullOrWhiteSpace(txtClientes_08.Text))
             {
-                campos.Add("estado = @estado");
-                parametros.Add(new MySqlParameter("@estado", txtClientes_08.Text));
+                campos.Add("telefone = @telefone");
+                parametros.Add(new MySqlParameter("@telefone", txtClientes_08.Text));
             }
+
+            if (!string.IsNullOrWhiteSpace(txtClientes_09.Text))
+            {
+                campos.Add("email = @email");
+                parametros.Add(new MySqlParameter("@email", txtClientes_09.Text));
+            }
+
 
             if (campos.Count == 0)
             {
@@ -219,7 +226,7 @@ namespace PI2025___Projeto
                 return;
             }
 
-            string query = $"UPDATE clientes SET {string.Join(", ", campos)} WHERE id = @id";
+            string query = $"UPDATE clientes SET {string.Join(", ", campos)} WHERE nome = @id";
 
             try
             {
@@ -251,7 +258,7 @@ namespace PI2025___Projeto
                 return;
             }
 
-            int id = Convert.ToInt32(comboID_Clientes.SelectedItem);
+            string id = Convert.ToString(comboID_Clientes.SelectedItem);
 
             var confirm = MessageBox.Show(
                 $"Tem certeza que deseja remover o cliente ID {id}?",
@@ -317,7 +324,7 @@ namespace PI2025___Projeto
         {
             try
             {
-        
+
                 if (string.IsNullOrWhiteSpace(txtCarro_01.Text) ||
                     string.IsNullOrWhiteSpace(txtCarro_02.Text) ||
                     string.IsNullOrWhiteSpace(txtCarro_03.Text) ||
@@ -552,13 +559,11 @@ namespace PI2025___Projeto
                     VALUES (@id_cliente, @id_carro, @data_inicio, @data_fim, @valor_total, @km_inicial, @km_final)",
                     conexao))
                 {
-                    comando.Parameters.AddWithValue("@id_cliente", txtAluguel_01.Text);
-                    comando.Parameters.AddWithValue("@id_carro", txtAluguel_02.Text);
-                    comando.Parameters.AddWithValue("@data_inicio", txtAluguel_03.Text);
-                    comando.Parameters.AddWithValue("@data_fim", txtAluguel_04.Text);
-                    comando.Parameters.AddWithValue("@valor_total", txtAluguel_05.Text);
-                    comando.Parameters.AddWithValue("@km_inicial", txtAluguel_06.Text);
-                    comando.Parameters.AddWithValue("@km_final", txtAluguel_07.Text);
+                    comando.Parameters.AddWithValue("@data_inicio", txtAluguel_01.Text);
+                    comando.Parameters.AddWithValue("@data_fim", txtAluguel_02.Text);
+                    comando.Parameters.AddWithValue("@valor_total", txtAluguel_03.Text);
+                    comando.Parameters.AddWithValue("@km_inicial", txtAluguel_04.Text);
+                    comando.Parameters.AddWithValue("@km_final", txtAluguel_05.Text);
 
                     conexao.Open();
                     comando.ExecuteNonQuery();
@@ -598,44 +603,32 @@ namespace PI2025___Projeto
 
                     if (!string.IsNullOrWhiteSpace(txtAluguel_01.Text))
                     {
-                        campos.Add("id_cliente = @id_cliente");
-                        comando.Parameters.AddWithValue("@id_cliente", txtAluguel_01.Text);
+                        campos.Add("data_inicio = @data_inicio");
+                        comando.Parameters.AddWithValue("@data_inicio", txtAluguel_01.Text);
                     }
 
                     if (!string.IsNullOrWhiteSpace(txtAluguel_02.Text))
                     {
-                        campos.Add("id_carro = @id_carro");
-                        comando.Parameters.AddWithValue("@id_carro", txtAluguel_02.Text);
+                        campos.Add("data_fim = @data_fim");
+                        comando.Parameters.AddWithValue("@data_fim", txtAluguel_02.Text);
                     }
 
                     if (!string.IsNullOrWhiteSpace(txtAluguel_03.Text))
                     {
-                        campos.Add("data_inicio = @data_inicio");
-                        comando.Parameters.AddWithValue("@data_inicio", txtAluguel_03.Text);
+                        campos.Add("valor_total = @valor_total");
+                        comando.Parameters.AddWithValue("@valor_total", txtAluguel_03.Text);
                     }
 
                     if (!string.IsNullOrWhiteSpace(txtAluguel_04.Text))
                     {
-                        campos.Add("data_fim = @data_fim");
-                        comando.Parameters.AddWithValue("@data_fim", txtAluguel_04.Text);
+                        campos.Add("km_inicial = @km_inicial");
+                        comando.Parameters.AddWithValue("@km_inicial", txtAluguel_04.Text);
                     }
 
                     if (!string.IsNullOrWhiteSpace(txtAluguel_05.Text))
                     {
-                        campos.Add("valor_total = @valor_total");
-                        comando.Parameters.AddWithValue("@valor_total", txtAluguel_05.Text);
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(txtAluguel_06.Text))
-                    {
-                        campos.Add("km_inicial = @km_inicial");
-                        comando.Parameters.AddWithValue("@km_inicial", txtAluguel_06.Text);
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(txtAluguel_07.Text))
-                    {
                         campos.Add("km_final = @km_final");
-                        comando.Parameters.AddWithValue("@km_final", txtAluguel_07.Text);
+                        comando.Parameters.AddWithValue("@km_final", txtAluguel_05.Text);
                     }
 
                     if (campos.Count == 0)
@@ -695,5 +688,4 @@ namespace PI2025___Projeto
 }
 
 
-    
 
