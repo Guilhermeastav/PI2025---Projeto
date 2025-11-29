@@ -34,14 +34,9 @@
             this.btnDeslogar = new System.Windows.Forms.Button();
             this.lblConexaoBDA = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
-            this.panelHistorico = new System.Windows.Forms.Panel();
-            this.btnFecharHistorico = new System.Windows.Forms.Button();
-            this.dgvHistorico = new System.Windows.Forms.DataGridView();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.pnlBackground.SuspendLayout();
-            this.panelHistorico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorico)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHistorico
@@ -121,46 +116,24 @@
             this.pnlBackground.Controls.Add(this.btnDeslogar);
             this.pnlBackground.Controls.Add(this.btnHistorico);
             this.pnlBackground.Controls.Add(this.btnLogin);
-            this.pnlBackground.Controls.Add(this.panelHistorico);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 0);
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(1268, 614);
             this.pnlBackground.TabIndex = 6;
             // 
-            // panelHistorico
+            // textBox1
             // 
-            this.panelHistorico.BackColor = System.Drawing.Color.White;
-            this.panelHistorico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHistorico.Controls.Add(this.btnFecharHistorico);
-            this.panelHistorico.Controls.Add(this.dgvHistorico);
-            this.panelHistorico.Location = new System.Drawing.Point(66, 133);
-            this.panelHistorico.Name = "panelHistorico";
-            this.panelHistorico.Size = new System.Drawing.Size(1165, 347);
-            this.panelHistorico.TabIndex = 7;
-            this.panelHistorico.Visible = false;
-            // 
-            // btnFecharHistorico
-            // 
-            this.btnFecharHistorico.Location = new System.Drawing.Point(22, 282);
-            this.btnFecharHistorico.Name = "btnFecharHistorico";
-            this.btnFecharHistorico.Size = new System.Drawing.Size(110, 32);
-            this.btnFecharHistorico.TabIndex = 1;
-            this.btnFecharHistorico.Text = "VOLTAR";
-            this.btnFecharHistorico.UseVisualStyleBackColor = true;
-            this.btnFecharHistorico.Click += new System.EventHandler(this.btnFecharHistorico_Click);
-            // 
-            // dgvHistorico
-            // 
-            this.dgvHistorico.BackgroundColor = System.Drawing.Color.White;
-            this.dgvHistorico.ColumnHeadersHeight = 34;
-            this.dgvHistorico.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHistorico.Location = new System.Drawing.Point(0, 0);
-            this.dgvHistorico.Name = "dgvHistorico";
-            this.dgvHistorico.RowHeadersWidth = 62;
-            this.dgvHistorico.RowTemplate.Height = 28;
-            this.dgvHistorico.Size = new System.Drawing.Size(1163, 345);
-            this.dgvHistorico.TabIndex = 0;
+            this.textBox1.BackColor = System.Drawing.Color.LightGray;
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox1.Location = new System.Drawing.Point(1026, 541);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(238, 33);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "PUC Motors";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAdmin
             // 
@@ -175,19 +148,6 @@
             this.btnAdmin.Text = "ADMIN";
             this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGray;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.textBox1.Location = new System.Drawing.Point(1026, 541);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 46);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "PUC Motors";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrontEnd
             // 
@@ -205,8 +165,6 @@
             this.Load += new System.EventHandler(this.Form3_Load);
             this.pnlBackground.ResumeLayout(false);
             this.pnlBackground.PerformLayout();
-            this.panelHistorico.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorico)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,9 +178,6 @@
         private System.Windows.Forms.Label lblConexaoBDA;
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.Button btnAdmin;
-        private System.Windows.Forms.Panel panelHistorico;
-        private System.Windows.Forms.Button btnFecharHistorico;
-        private System.Windows.Forms.DataGridView dgvHistorico;
         private System.Windows.Forms.TextBox textBox1;
     }
 }

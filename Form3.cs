@@ -45,19 +45,8 @@ namespace PI2025___Projeto
         }
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-            DataTable tabela = buscarAlugueis();
-
-            if (tabela.Rows.Count == 0)
-            {
-                MessageBox.Show("Nenhum histórico encontrado.");
-                return;
-            }
-
-            dgvHistorico.DataSource = tabela;
-
-            // Exibir o popup
-            panelHistorico.Visible = true;
-            panelHistorico.BringToFront();
+            FormHistorico tela = new FormHistorico();
+            tela.ShowDialog();
         }
 
         private void btnDeslogar_Click(object sender, EventArgs e)
@@ -165,34 +154,6 @@ namespace PI2025___Projeto
             FormAdmin tela = new FormAdmin();
             tela.ShowDialog();
         }
-
-        private void btnFecharHistorico_Click(object sender, EventArgs e)
-        {
-            panelHistorico.Visible = false;
-        }
-
-
-        bool arrastando = false;
-        Point inicioArrasto;
-
-        private void panelHistorico_MouseDown(object sender, MouseEventArgs e)
-        {
-            arrastando = true;
-            inicioArrasto = e.Location;
-        }
-
-        private void panelHistorico_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (arrastando)
-            {
-                panelHistorico.Left += e.X - inicioArrasto.X;
-                panelHistorico.Top += e.Y - inicioArrasto.Y;
-            }
-        }
-
-        private void panelHistorico_MouseUp(object sender, MouseEventArgs e)
-        {
-            arrastando = false;
-        }
     }
 }
+

@@ -79,9 +79,10 @@
             this.btnAlterar_1 = new System.Windows.Forms.Button();
             this.btnRemover_1 = new System.Windows.Forms.Button();
             this.gpBoxAlugueis = new System.Windows.Forms.GroupBox();
+            this.comboAlugueis_02 = new System.Windows.Forms.ComboBox();
+            this.comboAlugueis_01 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblKMFinal = new System.Windows.Forms.Label();
             this.lblKMInicial = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -93,11 +94,8 @@
             this.txtAluguel_02 = new System.Windows.Forms.TextBox();
             this.txtAluguel_01 = new System.Windows.Forms.TextBox();
             this.btnAdicionar_2 = new System.Windows.Forms.Button();
-            this.comboBox_Alugueis = new System.Windows.Forms.ComboBox();
             this.btnAlterar_2 = new System.Windows.Forms.Button();
             this.btnRemover_2 = new System.Windows.Forms.Button();
-            this.comboAlugueis_01 = new System.Windows.Forms.ComboBox();
-            this.comboAlugueis_02 = new System.Windows.Forms.ComboBox();
             this.gpboxClientes.SuspendLayout();
             this.gpBoxCarros.SuspendLayout();
             this.gpBoxAlugueis.SuspendLayout();
@@ -605,7 +603,6 @@
             this.gpBoxAlugueis.Controls.Add(this.comboAlugueis_01);
             this.gpBoxAlugueis.Controls.Add(this.label5);
             this.gpBoxAlugueis.Controls.Add(this.label4);
-            this.gpBoxAlugueis.Controls.Add(this.label3);
             this.gpBoxAlugueis.Controls.Add(this.lblKMFinal);
             this.gpBoxAlugueis.Controls.Add(this.lblKMInicial);
             this.gpBoxAlugueis.Controls.Add(this.label1);
@@ -617,7 +614,6 @@
             this.gpBoxAlugueis.Controls.Add(this.txtAluguel_02);
             this.gpBoxAlugueis.Controls.Add(this.txtAluguel_01);
             this.gpBoxAlugueis.Controls.Add(this.btnAdicionar_2);
-            this.gpBoxAlugueis.Controls.Add(this.comboBox_Alugueis);
             this.gpBoxAlugueis.Controls.Add(this.btnAlterar_2);
             this.gpBoxAlugueis.Controls.Add(this.btnRemover_2);
             this.gpBoxAlugueis.Location = new System.Drawing.Point(18, 442);
@@ -628,6 +624,24 @@
             this.gpBoxAlugueis.TabIndex = 13;
             this.gpBoxAlugueis.TabStop = false;
             this.gpBoxAlugueis.Text = "Alugueis";
+            // 
+            // comboAlugueis_02
+            // 
+            this.comboAlugueis_02.FormattingEnabled = true;
+            this.comboAlugueis_02.Location = new System.Drawing.Point(91, 143);
+            this.comboAlugueis_02.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboAlugueis_02.Name = "comboAlugueis_02";
+            this.comboAlugueis_02.Size = new System.Drawing.Size(166, 28);
+            this.comboAlugueis_02.TabIndex = 42;
+            // 
+            // comboAlugueis_01
+            // 
+            this.comboAlugueis_01.FormattingEnabled = true;
+            this.comboAlugueis_01.Location = new System.Drawing.Point(91, 93);
+            this.comboAlugueis_01.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboAlugueis_01.Name = "comboAlugueis_01";
+            this.comboAlugueis_01.Size = new System.Drawing.Size(166, 28);
+            this.comboAlugueis_01.TabIndex = 41;
             // 
             // label5
             // 
@@ -646,15 +660,6 @@
             this.label4.Size = new System.Drawing.Size(83, 20);
             this.label4.TabIndex = 40;
             this.label4.Text = "ID Cliente:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(380, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 20);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "ID Alugueis:";
             // 
             // lblKMFinal
             // 
@@ -752,15 +757,6 @@
             this.btnAdicionar_2.UseVisualStyleBackColor = true;
             this.btnAdicionar_2.Click += new System.EventHandler(this.btnAdicionar_2_Click);
             // 
-            // comboBox_Alugueis
-            // 
-            this.comboBox_Alugueis.FormattingEnabled = true;
-            this.comboBox_Alugueis.Location = new System.Drawing.Point(487, 32);
-            this.comboBox_Alugueis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox_Alugueis.Name = "comboBox_Alugueis";
-            this.comboBox_Alugueis.Size = new System.Drawing.Size(180, 28);
-            this.comboBox_Alugueis.TabIndex = 6;
-            // 
             // btnAlterar_2
             // 
             this.btnAlterar_2.Location = new System.Drawing.Point(130, 29);
@@ -783,29 +779,11 @@
             this.btnRemover_2.UseVisualStyleBackColor = true;
             this.btnRemover_2.Click += new System.EventHandler(this.btnRemover_2_Click);
             // 
-            // comboAlugueis_01
-            // 
-            this.comboAlugueis_01.FormattingEnabled = true;
-            this.comboAlugueis_01.Location = new System.Drawing.Point(91, 93);
-            this.comboAlugueis_01.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboAlugueis_01.Name = "comboAlugueis_01";
-            this.comboAlugueis_01.Size = new System.Drawing.Size(166, 28);
-            this.comboAlugueis_01.TabIndex = 41;
-            // 
-            // comboAlugueis_02
-            // 
-            this.comboAlugueis_02.FormattingEnabled = true;
-            this.comboAlugueis_02.Location = new System.Drawing.Point(91, 143);
-            this.comboAlugueis_02.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboAlugueis_02.Name = "comboAlugueis_02";
-            this.comboAlugueis_02.Size = new System.Drawing.Size(166, 28);
-            this.comboAlugueis_02.TabIndex = 42;
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1315, 1050);
+            this.ClientSize = new System.Drawing.Size(1315, 661);
             this.Controls.Add(this.gpBoxAlugueis);
             this.Controls.Add(this.gpBoxCarros);
             this.Controls.Add(this.gpboxClientes);
@@ -842,7 +820,6 @@
         private System.Windows.Forms.GroupBox gpBoxAlugueis;
         private System.Windows.Forms.TextBox txtAluguel_01;
         private System.Windows.Forms.Button btnAdicionar_2;
-        private System.Windows.Forms.ComboBox comboBox_Alugueis;
         private System.Windows.Forms.Button btnAlterar_2;
         private System.Windows.Forms.Button btnRemover_2;
         private System.Windows.Forms.TextBox txtClientes_08;
@@ -889,7 +866,6 @@
         private System.Windows.Forms.Label lblKMFinal;
         private System.Windows.Forms.Label lblKMInicial;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboAlugueis_02;
