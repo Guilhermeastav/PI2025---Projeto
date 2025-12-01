@@ -8,8 +8,16 @@ namespace PI2025___Projeto
 {
     public partial class FormAlugueis : Form
     {
+        /*---------------------------------------------------------------------------------------
+         Variável de conexão com o banco MySQL.
+         Armazena a string contendo host, porta, nome do banco, usuário, senha e desabilita SSL.
+        ----------------------------------------------------------------------------------------*/
         private string stringConexao = "server = 127.0.0.1; port=3306;database=aluguel_carros;uid=root;pwd=@uo&AY2k;SslMode=Disabled;";
 
+        /*---------------------------------------------------------------------------------------
+         Construtor do formulário.
+         Inicializa componentes, aplica estilo ao DataGridView e carrega os dados dos aluguéis.
+        ----------------------------------------------------------------------------------------*/
         public FormAlugueis()
         {
             InitializeComponent();
@@ -17,6 +25,14 @@ namespace PI2025___Projeto
             carregarAlugueis();
         }
 
+        /*---------------------------------------------------------------------------------------
+         Método carregarAlugueis()
+         - Conecta ao banco de dados MySQL.
+         - Executa a query para obter informações dos carros.
+         - Preenche o DataGridView com os resultados.
+         - Aplica estilo personalizado ao cabeçalho.
+         - Exibe mensagem caso ocorra algum erro.
+        ----------------------------------------------------------------------------------------*/
         private void carregarAlugueis()
         {
             try
@@ -80,6 +96,13 @@ namespace PI2025___Projeto
 
         }
 
+        /*---------------------------------------------------------------------------------------
+         Método EstilizarDGV()
+         - Aplica todas as configurações visuais ao DataGridView.
+         - Define cores, fontes, paddings, alinhamentos e estilos de seleção.
+         - Impede edição e redimensionamento manual pelo usuário.
+         - Aplica estilo aos cabeçalhos, linhas e células alternadas.
+        ----------------------------------------------------------------------------------------*/
         private void EstilizarDGV()
         {
             Color headerBack = Color.FromArgb(90, 140, 250);

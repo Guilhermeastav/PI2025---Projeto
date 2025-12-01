@@ -13,15 +13,20 @@ namespace PI2025___Projeto
 {
     public partial class FrontEnd : Form
     {
-        //CONEXAO COM O BANCO DE DADOS
-
         private MySqlConnection conexao;
         private string stringConexao = "server=127.0.0.1;port=3306;database=aluguel_carros;uid=root;pwd=@uo&AY2k;SslMode=Disabled;";
+
         public FrontEnd()
         {
             InitializeComponent();
         }
 
+        /*---------------------------------------------------------------------------------------
+            verificarConexao
+            - Testa a conexão com o banco de dados MySQL
+            - Atualiza o label de status indicando sucesso ou falha
+            - Muda a cor do texto para verde (ok) ou vermelho (erro)
+        ----------------------------------------------------------------------------------------*/
         private void verificarConexao()
         {
             try
@@ -32,17 +37,18 @@ namespace PI2025___Projeto
                 lblConexaoBDA.Text = "Conectado";
                 lblConexaoBDA.ForeColor = Color.LimeGreen;
             }
-
             catch (Exception ex)
             {
                 lblConexaoBDA.Text = "Não Conectado" + ex.Message;
                 lblConexaoBDA.ForeColor = Color.Red;
             }
         }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             verificarConexao();
         }
+
         private void btnHistorico_Click(object sender, EventArgs e)
         {
             FormHistorico tela = new FormHistorico();
@@ -60,9 +66,14 @@ namespace PI2025___Projeto
         private void label1_Click(object sender, EventArgs e)
         {
 
-
         }
 
+        /*---------------------------------------------------------------------------------------
+            carregarAlugueis
+            - Realiza SELECT simples na tabela alugueis
+            - Carrega o conteúdo dentro de um DataTable interno
+            - Usado como rotina básica de leitura de dados
+        ----------------------------------------------------------------------------------------*/
         private void carregarAlugueis()
         {
             try
@@ -82,6 +93,13 @@ namespace PI2025___Projeto
                 MessageBox.Show("Erro ao carregar dados: " + ex.Message);
             }
         }
+
+        /*---------------------------------------------------------------------------------------
+            buscarAlugueis
+            - Retorna um DataTable com TODOS os dados completos do aluguel
+            - Realiza JOIN com as tabelas clientes e carros
+            - Ordena os aluguéis do mais recente para o mais antigo
+        ----------------------------------------------------------------------------------------*/
         private DataTable buscarAlugueis()
         {
             DataTable tabela = new DataTable();
@@ -136,11 +154,9 @@ namespace PI2025___Projeto
         {
 
         }
-
         private void Form3_Load(object sender, EventArgs e)
         {
             Color corSemitransparente = Color.FromArgb(128, 30, 30, 30);
-
             pnlBackground.BackColor = corSemitransparente;
         }
 

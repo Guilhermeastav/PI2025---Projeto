@@ -16,6 +16,7 @@ namespace PI2025___Projeto
     {
 
         private string stringConexao = "server = 127.0.0.1; port=3306;database=aluguel_carros;uid=root;pwd=@uo&AY2k;SslMode=Disabled;";
+
         public FormHistorico()
         {
             InitializeComponent();
@@ -23,6 +24,12 @@ namespace PI2025___Projeto
             carregarHistorico();
         }
 
+        /*---------------------------------------------------------------------------------------
+            carregarHistorico
+            - Realiza SELECT com JOIN (clientes, carros e aluguéis)
+            - Carrega resultados no DataGridView do histórico
+            - Formata colunas automaticamente para melhor visualização
+        ----------------------------------------------------------------------------------------*/
         private void carregarHistorico()
         {
             try

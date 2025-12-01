@@ -14,10 +14,27 @@ namespace PI2025___Projeto
 {
     public partial class FormAdmin : Form
     {
-
+        /*---------------------------------------------------------------------------------------
+         Array contendo as TextBox dos campos de cliente.
+         Permite manipular os campos como conjunto (validação, limpeza, etc).
+        ----------------------------------------------------------------------------------------*/
         private TextBox[] camposTxtCliente;
 
+        /*---------------------------------------------------------------------------------------
+         String de conexão ao banco MySQL.
+         Contém host, porta, banco, usuário, senha e modo SSL desabilitado.
+        ----------------------------------------------------------------------------------------*/
         private string stringConexao = "server = 127.0.0.1; port=3306;database=aluguel_carros;uid=root;pwd=@uo&AY2k;SslMode=Disabled;";
+
+        /*---------------------------------------------------------------------------------------
+         Construtor do FormAdmin
+         - Inicializa componentes
+         - Configura o ComboBox de status dos carros
+         - Configura arrays de campos de cliente
+         - Carrega IDs dos clientes e carros
+         - Carrega dados nos ComboBoxes utilizados para edição
+         - Vincula eventos SelectedIndexChanged para atualização dinâmica
+        ----------------------------------------------------------------------------------------*/
         public FormAdmin()
         {
 
@@ -28,7 +45,6 @@ namespace PI2025___Projeto
             comboCarro_Status.Items.Add("Manutenção");
 
             comboCarro_Status.SelectedIndex = 0;
-
 
             camposTxtCliente = new TextBox[]
             {
@@ -42,6 +58,7 @@ namespace PI2025___Projeto
             CarregarCarrosParaCombos();
             CarregarClientesParaCombos();
 
+            // Eventos de atualização
             comboID_Clientes.SelectedIndexChanged += ComboID_Clientes_SelectedIndexChanged;
             comboID_Carros.SelectedIndexChanged += ComboID_Carros_SelectedIndexChanged;
             comboAlugueis_01.SelectedIndexChanged += comboAlugueis_01_SelectedIndexChanged;
@@ -52,9 +69,17 @@ namespace PI2025___Projeto
         {
 
         }
-        //===============================//
-        // SESSAO DO CODIGO - CLIENTES   //
-        //===============================//
+
+        //======================================================================================
+        //                                SESSÃO - CLIENTES
+        //======================================================================================
+
+        /*---------------------------------------------------------------------------------------
+         CarregarIDsClientes()
+         - Carrega do banco a lista de Nomes de Clientes
+         - Preenche o ComboBox comboID_Clientes
+         - Utilizado como base para seleção, edição e remoção
+        ----------------------------------------------------------------------------------------*/
         private void CarregarIDsClientes()
         {
             try
@@ -115,7 +140,6 @@ namespace PI2025___Projeto
                 }
             }
 
-
             try
             {
                 using (var conexao = new MySqlConnection(stringConexao))
@@ -142,10 +166,8 @@ namespace PI2025___Projeto
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
 
-
                 foreach (var campo in campos)
                     campo.Clear();
-
 
                 CarregarIDsClientes();
 
@@ -226,7 +248,6 @@ namespace PI2025___Projeto
                 parametros.Add(new MySqlParameter("@email", txtClientes_09.Text));
             }
 
-
             if (campos.Count == 0)
             {
                 MessageBox.Show("Preencha pelo menos um campo para atualizar.");
@@ -256,7 +277,6 @@ namespace PI2025___Projeto
                 MessageBox.Show($"Erro ao atualizar cliente:\n{ex.Message}");
             }
         }
-
         private void btnRemover_0_Click(object sender, EventArgs e)
         {
             if (comboID_Clientes.SelectedItem == null)
@@ -298,10 +318,16 @@ namespace PI2025___Projeto
             }
         }
 
-        //==============================//
-        // SESSAO DO CODIGO - CARROS    //
-        //==============================//
+        //======================================================================================
+        //                                SESSÃO - CARROS
+        //======================================================================================
 
+        /*---------------------------------------------------------------------------------------
+         CarregarIDsCarros()
+         - Consulta o banco
+         - Obtém IDs dos carros cadastrados
+         - Preenche comboID_Carros
+        ----------------------------------------------------------------------------------------*/
         private void CarregarIDsCarros()
         {
             try
@@ -389,7 +415,6 @@ namespace PI2025___Projeto
 
             int idCarro = (int)comboID_Carros.SelectedItem;
 
-            // Mapeamento dos campos do banco
             string[] camposBanco =
             {
                 "modelo",
@@ -403,7 +428,6 @@ namespace PI2025___Projeto
                 "valor_diaria"
             };
 
-            // Suas TextBoxes genéricas
             TextBox[] txts =
             {
                 txtClientes_01,
@@ -427,7 +451,6 @@ namespace PI2025___Projeto
                     string campo = camposBanco[i];
                     campos.Add($"{campo} = @{campo}");
 
-                    // Conversão automática
                     if (campo == "ano")
                         valores.Add(int.Parse(txts[i].Text));
                     else if (campo == "km_atual" || campo == "valor_diaria")
@@ -437,7 +460,6 @@ namespace PI2025___Projeto
                 }
             }
 
-            // STATUS (combobox)
             if (comboCarro_Status.SelectedItem != null)
             {
                 campos.Add("status = @status");
@@ -526,12 +548,15 @@ namespace PI2025___Projeto
             }
         }
 
-        // ================================
-        // ===== CARREGAR IDS NO COMBO ====
-        // ================================
+        //======================================================================================
+        //                              CARREGAR IDS PARA COMBOBOXES
+        //======================================================================================
 
-
-
+        /*---------------------------------------------------------------------------------------
+         CarregarClientesParaCombos()
+         - Preenche comboID_Clientes e comboAlugueis_01
+         - Utiliza DataSource para exibir nome, vincular ID
+        ----------------------------------------------------------------------------------------*/
         private void CarregarClientesParaCombos()
         {
             try
@@ -544,13 +569,11 @@ namespace PI2025___Projeto
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // combo geral de clientes (ex.: para editar cliente)
                     comboID_Clientes.DataSource = dt.Copy();
                     comboID_Clientes.DisplayMember = "nome";
                     comboID_Clientes.ValueMember = "id";
                     comboID_Clientes.SelectedIndex = -1;
 
-                    // combo para aluguéis (cliente)
                     comboAlugueis_01.DataSource = dt.Copy();
                     comboAlugueis_01.DisplayMember = "nome";
                     comboAlugueis_01.ValueMember = "id";
@@ -569,7 +592,6 @@ namespace PI2025___Projeto
             int id = Convert.ToInt32(comboID_Clientes.SelectedValue);
             CarregarDadosCliente(id);
         }
-
         private void CarregarDadosCliente(int idCliente)
         {
             try
@@ -605,6 +627,7 @@ namespace PI2025___Projeto
             }
         }
 
+
         private void CarregarCarrosParaCombos()
         {
             try
@@ -628,7 +651,6 @@ namespace PI2025___Projeto
                 MessageBox.Show("Erro ao carregar carros: " + ex.Message);
             }
         }
-
         private void ComboID_Carros_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboID_Carros.SelectedValue == null) return;
@@ -636,6 +658,11 @@ namespace PI2025___Projeto
             CarregarDadosCarro(id);
         }
 
+        /*---------------------------------------------------------------------------------------
+         CarregarDadosCarro()
+         - Consulta informações do carro selecionado
+         - Preenche campos do formulário
+        ----------------------------------------------------------------------------------------*/
         private void CarregarDadosCarro(int idCarro)
         {
             try
@@ -672,15 +699,18 @@ namespace PI2025___Projeto
             }
         }
 
+        /*---------------------------------------------------------------------------------------
+        GetSelectedIdFromCombo()
+        - Interpreta corretamente valores de combos ligados a DataTable
+        - Resolve problemas de SelectedValue retornando DataRowView
+        ----------------------------------------------------------------------------------------*/
         private int GetSelectedIdFromCombo(ComboBox cb)
         {
             if (cb == null) return -1;
             if (cb.SelectedValue == null) return -1;
 
-            // Quando DataSource é DataTable, SelectedValue pode ser DataRowView em certos momentos.
             if (cb.SelectedValue is DataRowView drv)
             {
-                // tenta extrair a primeira coluna numérica (id) ou coluna "id_aluguel"/"id"/"id_carro"
                 if (drv.DataView.Table.Columns.Contains("id_aluguel"))
                 {
                     object v = drv["id_aluguel"];
@@ -691,24 +721,26 @@ namespace PI2025___Projeto
                     object v = drv["id"];
                     if (v != DBNull.Value) return Convert.ToInt32(v);
                 }
-                // fallback: tenta converter ToString
+
                 int tmp;
                 if (int.TryParse(drv.Row.ItemArray.FirstOrDefault()?.ToString(), out tmp)) return tmp;
                 return -1;
             }
 
-            // Normal path: SelectedValue é diretamente o id (int ou string)
             int id;
             if (int.TryParse(cb.SelectedValue.ToString(), out id)) return id;
             try { return Convert.ToInt32(cb.SelectedValue); }
             catch { return -1; }
         }
 
+        //======================================================================================
+        //                                   SESSÃO - ALUGUÉIS
+        //======================================================================================
+
         private void btnAdicionar_2_Click(object sender, EventArgs e)
         {
             try
             {
-                // validações
                 int idCliente = GetSelectedIdFromCombo(comboAlugueis_01);
                 if (idCliente <= 0)
                 {
@@ -756,7 +788,7 @@ namespace PI2025___Projeto
                 }
 
                 MessageBox.Show("Aluguel registrado com sucesso!");
-                // Recarrega os aluguéis do cliente para atualizar comboAlugueis_02
+
                 if (comboAlugueis_01.SelectedValue != null)
                     CarregarAlugueisDoCliente(Convert.ToInt32(comboAlugueis_01.SelectedValue));
             }
@@ -765,7 +797,6 @@ namespace PI2025___Projeto
                 MessageBox.Show($"Erro ao adicionar aluguel:\n{ex.Message}");
             }
         }
-
         private void comboAlugueis_01_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboAlugueis_01.SelectedValue == null) return;
@@ -773,6 +804,11 @@ namespace PI2025___Projeto
             CarregarAlugueisDoCliente(idCliente);
         }
 
+        /*---------------------------------------------------------------------------------------
+         CarregarAlugueisDoCliente()
+         - Carrega aluguéis pertencentes ao cliente selecionado
+         - Preenche comboAlugueis_02 com datas
+        ----------------------------------------------------------------------------------------*/
         private void CarregarAlugueisDoCliente(int idCliente)
         {
             try
@@ -838,7 +874,6 @@ namespace PI2025___Projeto
                 MessageBox.Show("Erro ao selecionar aluguel: " + ex.Message);
             }
         }
-
         private void CarregarDadosAluguel(int idAluguel)
         {
             try
@@ -883,13 +918,10 @@ namespace PI2025___Projeto
                 MessageBox.Show("Erro ao carregar dados do aluguel: " + ex.Message);
             }
         }
-
-
         private void btnAlterar_2_Click(object sender, EventArgs e)
         {
             try
             {
-                // pega id do aluguel diretamente de comboAlugueis_02
                 int idAluguel = GetSelectedIdFromCombo(comboAlugueis_02);
                 if (idAluguel <= 0)
                 {
@@ -947,7 +979,7 @@ namespace PI2025___Projeto
                 }
 
                 MessageBox.Show("Aluguel atualizado com sucesso!");
-                // Recarrega para refletir mudanças
+
                 if (comboAlugueis_01.SelectedValue != null)
                     CarregarAlugueisDoCliente(Convert.ToInt32(comboAlugueis_01.SelectedValue));
             }
@@ -980,7 +1012,7 @@ namespace PI2025___Projeto
                 }
 
                 MessageBox.Show("Aluguel removido com sucesso!");
-                // atualizar lista
+
                 if (comboAlugueis_01.SelectedValue != null)
                     CarregarAlugueisDoCliente(Convert.ToInt32(comboAlugueis_01.SelectedValue));
             }
